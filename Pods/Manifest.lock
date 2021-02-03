@@ -1,0 +1,60 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - BarrageRenderer (2.1.0)
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.2.0)
+  - MJExtension (3.0.17)
+  - SDWebImage (5.9.2):
+    - SDWebImage/Core (= 5.9.2)
+  - SDWebImage/Core (5.9.2)
+  - SocketRocket (0.5.1)
+  - Toast (4.0.0)
+
+DEPENDENCIES:
+  - AFNetworking (= 3.2.1)
+  - BarrageRenderer (= 2.1.0)
+  - Masonry (= 1.1.0.0)
+  - MBProgressHUD (~> 1.2.0)
+  - MJExtension (= 3.0.17)
+  - SDWebImage (~> 5.0)
+  - SocketRocket
+  - Toast (~> 4.0.0)
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - BarrageRenderer
+    - Masonry
+    - MBProgressHUD
+    - MJExtension
+    - SDWebImage
+    - SocketRocket
+    - Toast
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  BarrageRenderer: 00e5f8081d81f29c1fc12712ddf2f875bd9c6f77
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MJExtension: 74ec83124a68891619fb7ba9c5c811bbf1691076
+  SDWebImage: 0b42b8719ab0c5257177d5894306e8a336b21cbb
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+
+PODFILE CHECKSUM: 6e4a7b881df4da007d3948136bd77aba3282600a
+
+COCOAPODS: 1.10.0

@@ -1,0 +1,117 @@
+{
+  "name": "IJKMediaFramework",
+  "version": "2.6.0.8",
+  "summary": "IJKPlayer of Kuaishou.",
+  "description": "kuaishou IJKPlayer",
+  "homepage": "https://kuaishou.com",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "shuailongcheng": "shuailongcheng@kuaishou.com"
+  },
+  "source": {
+    "git": "git@git.corp.kuaishou.com:video/pruned-ijkplayer.git",
+    "tag": "r2.6.0.8",
+    "submodules": true
+  },
+  "prepare_command": "tools/gen_kwai_player_version.sh",
+  "platforms": {
+    "ios": "7.0"
+  },
+  "source_files": [
+    "ios/IJKMediaPlayer/IJKMediaFramework/*.{h}",
+    "ios/IJKMediaPlayer/KwaiMediaPlayer/**/*.{h,c,m,mm}",
+    "ios/IJKMediaPlayer/*.{h,c,m,mm}",
+    "ios/IJKMediaPlayer/*.{h,m}",
+    "ios/IJKMediaPlayer/IJKMediaPlayer/**/*.{h,c,m}",
+    "ijkmedia/**/*.{h,c,m,cc}",
+    "ios/deps/include/**/*.h",
+    "common/deps/include/json/*.h",
+    "ijkmedia/ijkkwai/shared/*.{h,c,cpp}",
+    "ijkmedia/ijkkwai/audioprocess/*.{h,c,cpp}",
+    "awesome_cache/**/*.{h,cc,mm}",
+    "catelyn_cp/utility.*",
+    "catelyn_cp/xlog/xlog.*",
+    "catelyn_cp/event.*",
+    "catelyn_cp/file.*",
+    "catelyn_cp/listener.h",
+    "catelyn_cp/atomic_file.*",
+    "catelyn_cp/io_stream.*",
+    "catelyn_cp/data_io_stream.*",
+    "catelyn_cp/ring_buf.*",
+    "catelyn_cp/buffered_output_stream.*",
+    "catelyn_cp/any.*",
+    "catelyn_cp/runloop.*",
+    "catelyn_cp/runloop_msg_center.*",
+    "catelyn_cp/platform/darwin/*",
+    "catelyn_cp/resource_monitor.h",
+    "catelyn_cp/thread_function_wrapper.h",
+    "catelyn_cp/crypto/*.{h,c,cc}",
+    "tools/gen_kwai_player_version.sh"
+  ],
+  "exclude_files": [
+    "ijkmedia/ijkplayer/android/**/*",
+    "ijkmedia/ijkkwai/cache/android/**/*",
+    "ijkmedia/ijksdl/android/**/*",
+    "ijkmedia/ijkyuv/",
+    "ijkmedia/ijkj4a/",
+    "ijkmedia/Android.mk",
+    "ijkmedia/ijkplayer/ijkplayer_log.*",
+    "awesome_cache/cache_test/**/*",
+    "awesome_cache/cache_test/*",
+    "awesome_cache/android/*"
+  ],
+  "requires_arc": true,
+  "pod_target_xcconfig": {
+    "HEADER_SEARCH_PATHS": "$(PODS_TARGET_SRCROOT)/** $(PODS_TARGET_SRCROOT)/common/deps/include $(PODS_TARGET_SRCROOT)/ios/deps/include ${PODS_ROOT}/boost ${PODS_ROOT}/KSXLog_iOS",
+    "USE_HEADERMAP": "NO"
+  },
+  "private_header_files": [
+    "ios/deps/**/*.h",
+    "ijkmedia/**/*.h",
+    "ijkmedia/ijkkwai/shared/*.h",
+    "ijkmedia/ijkkwai/audioprocess/*.h"
+  ],
+  "dependencies": {
+    "KSFFmpeg_iOS": [
+      "~> 3.0.2.0"
+    ],
+    "boost": [
+      "~>1.64.0"
+    ],
+    "KSXLog_iOS": [
+
+    ],
+    "OpenSSL-Universal": [
+
+    ],
+    "KSAudioProcessLib": [
+
+    ]
+  },
+  "frameworks": "VideoToolbox",
+  "ios": {
+    "libraries": [
+      "z",
+      "iconv",
+      "c++"
+    ]
+  },
+  "vendored_libraries": [
+    "ios/deps/lib/libsoundtouch.a",
+    "ios/deps/lib/libcurl.a"
+  ],
+  "subspecs": [
+    {
+      "name": "no-arc",
+      "source_files": [
+        "ios/IJKMediaPlayer/IJKMediaPlayer/ijkmedia/ijksdl/ios/ijksdl_aout_ios_audiounit.m",
+        "ios/IJKMediaPlayer/IJKMediaPlayer/ijkmedia/ijksdl/ios/ijksdl_vout_ios_gles2.m",
+        "ios/IJKMediaPlayer/IJKMediaPlayer/ijkmedia/ijkplayer/ios/ijkplayer_ios.m"
+      ],
+      "requires_arc": "false"
+    }
+  ]
+}
